@@ -12,6 +12,7 @@
 	<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 	<!-- Custom CSS -->
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/custom.css" rel='stylesheet' type='text/css' />
 	<!-- Graph CSS -->
 	<link href="css/font-awesome.css" rel="stylesheet"> 
 	<!-- jQuery -->

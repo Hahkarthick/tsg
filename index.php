@@ -9,26 +9,91 @@
    <!--/content-inner-->
 	<div class="left-content">
 	   <div class="inner-content">
-	   	<?php 
-	   		headerBar();
-	   	?>
+		<?php 
+			headerBar();
+		?>
 			<div class="outter-wp">
 				<!-- Main Container -->
-					
+					<div class="col-md-6 col-sm-6 col-xs-12 f_left">
+						<h2>Sri Rak Jewelers</h2>
+						<address>
+							<span>678-680, Big Bazzar Street, Coimbatore - 01</span>
+							<span>E- mail: dnbalaramkumar581979@gmail.com</span>
+							<span>Cell: 91502 05732,98438 15732</span>
+							<span>GST NO: 33AQFS5988RIZR</span>
+							<span>HSN/SAC CODE:7113/998892</span>
+						</address>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12 f_right">
+						<h3>LALITHA JEWELLERY MART PVT LTD</h3>
+						<address>
+							<span>Name & Address ……………………………………………………………………………………………………………..</span>
+							<span>NO 53 ICON SAVITHRI GANESH BUILIDING ,HABIBULLAH ROAD,</span>
+							<span>T NAGAR. CHENNAI -17</span>
+							<span>GST NO: ……………………………………………………………………</span>
+						</address>
+					</div>					
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="table-responsive">          
+						  	<table class="table">
+								<thead>
+								  <tr>
+									<th>Sl No</th>
+									<th>Paticulars</th>
+									<th>Quantity</th>
+									<th>Purity</th>
+									<th>Net GMS</th>
+									<th>M.Charge Amount</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>1</td>
+									<td>Anna</td>
+									<td>Pitt</td>
+									<td>35</td>
+									<td>New York</td>
+									<td>USA</td>
+								  </tr>
+								  <tr>
+									<td>1</td>
+									<td>Anna</td>
+									<td>Pitt</td>
+									<td>35</td>
+									<td>New York</td>
+									<td>USA</td>
+								  </tr>
+								  <tr>
+									<td>1</td>
+									<td>Anna</td>
+									<td>Pitt</td>
+									<td>35</td>
+									<td>New York</td>
+									<td>USA</td>
+								  </tr>
+								</tbody>
+						  	</table>
+						  	<div class="total">
+						  		<label>SGST:</label>
+						  		<label>CGST:</label>
+						  		<label>Total Amount</label>
+						  	</div>
+						</div>
+					</div>
 
 
 				<!-- //Main Container -->							
 			</div>
 			 <!--footer section start-->
-			   	<?php
-			   		footer();
+				<?php
+					footer();
 				?>
 			<!--footer section end-->
 		</div>
 	</div>
 				<!--//content-inner-->
-						   	<?php
-						   		sideBar();
+							<?php
+								sideBar();
 							?>
 							  <div class="clearfix"></div>		
 							</div>

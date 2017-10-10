@@ -1,0 +1,15 @@
+address span{
+    display: block;
+}
+.f_left{
+	float: left;
+}
+.f_right{
+	float: right;
+}
+.total label{
+	 display: block;
+}
+.total{
+	border: dotted 0.7px #000;
+}
