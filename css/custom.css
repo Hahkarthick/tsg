@@ -13,3 +13,8 @@ address span{
 .total{
 	border: dotted 0.7px #000;
 }
+.outter-wp{
+	
+    overflow: scroll;
+
+}
