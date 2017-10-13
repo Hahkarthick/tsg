@@ -9,6 +9,7 @@ address span{
 }
 .total label{
 	 display: block;
+	 float: right;
 }
 .total{
 	border: dotted 0.7px #000;
