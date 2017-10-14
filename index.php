@@ -6,21 +6,23 @@
 ?>
 <body>
 	<script type="text/javascript">
-      $('#print').on('click',function(){
-         $('.outter-wp').printThis({
-                 debug: false,           // show the iframe for debugging
-                 importCSS: false,        // import parent page css
-                 importStyle: true,     // import style tags
-                 printContainer: true,   // print outer container/$.selector
-                 loadCSS: ["{{asset('css/app.css')}}"],            // load an additional css file - load multiple stylesheets with an array []
-                 header: "",
-                         // "<h4 class='header col-md-12'>"+paymentType+"</h4>",           // prefix to html
-                 pageTitle: "",          // add title to print page
-                 removeInline: false,    // remove all inline styles
-                 printDelay: 333,        // variable print delay
-                 doctypeString: '<!DOCTYPE html>', // html doctype
-                 removeScripts: false    // remove script tags before appending
-         });
+		$(document).ready(function(){
+	      $('#print').on('click',function(){
+	         $('#printCont').printThis({
+	                 debug: false,           // show the iframe for debugging
+	                 importCSS: false,        // import parent page css
+	                 importStyle: true,     // import style tags
+	                 printContainer: true,   // print outer container/$.selector
+	                 loadCSS: ["css/custom.css"],            // load an additional css file - load multiple stylesheets with an array []
+	                 header: "",
+	                         // "<h4 class='header col-md-12'>"+paymentType+"</h4>",           // prefix to html
+	                 pageTitle: "",          // add title to print page
+	                 removeInline: false,    // remove all inline styles
+	                 printDelay: 333,        // variable print delay
+	                 doctypeString: '<!DOCTYPE html>', // html doctype
+	                 removeScripts: false    // remove script tags before appending
+	         });
+	    	});
     	});
 	</script>
    <div class="page-container">
@@ -32,6 +34,7 @@
 		?>
 			<div class="outter-wp">
 				<!-- Main Container -->
+				<div id="printCont">
 					<div class="col-md-6 col-sm-6 col-xs-12 f_left">
 						<h2>Sri Rak Jewelers</h2>
 						<address>
@@ -96,10 +99,12 @@
 						  		<label>CGST:</label>
 						  		<label>Total Amount</label>
 						  	</div>
-						</div>
-						<button id="print">Print</button>
+						</div>						
 					</div>
-
+				</div>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<button class="btn btn-info " id="print">Print</button>
+					</div>
 
 				<!-- //Main Container -->							
 			</div>
