@@ -20,7 +20,7 @@
 	<!-- lined-icons -->
 	<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 	<!-- //lined-icons -->
-	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery-3.2.0.min.js"></script>
 	<script src="js/amcharts.js"></script>	
 	<script src="js/serial.js"></script>	
 	<script src="js/light.js"></script>	

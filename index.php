@@ -13,7 +13,7 @@
 	                 importCSS: false,        // import parent page css
 	                 importStyle: true,     // import style tags
 	                 printContainer: true,   // print outer container/$.selector
-	                 loadCSS: ["css/custom.css"],            // load an additional css file - load multiple stylesheets with an array []
+	                 loadCSS: ["tsg/css/custom.css","tsg/css/style.css","tsg/css/bootstrap.min.css"],            // load an additional css file - load multiple stylesheets with an array []
 	                 header: "",
 	                         // "<h4 class='header col-md-12'>"+paymentType+"</h4>",           // prefix to html
 	                 pageTitle: "",          // add title to print page
@@ -45,10 +45,9 @@
 							<span>HSN/SAC CODE:7113/998892</span>
 						</address>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 f_right">
-						<h3>LALITHA JEWELLERY MART PVT LTD</h3>
+					<div class="col-md-6 col-sm-6 col-xs-12 f_right">						
 						<address>
-							<span>Name & Address ……………………………………………………………………………………………………………..</span>
+							<span><h3>LALITHA JEWELLERY MART PVT LTD</h3></span>
 							<span>NO 53 ICON SAVITHRI GANESH BUILIDING ,HABIBULLAH ROAD,</span>
 							<span>T NAGAR. CHENNAI -17</span>
 							<span>GST NO: ……………………………………………………………………</span>
@@ -94,10 +93,12 @@
 								  </tr>
 								</tbody>
 						  	</table>
-						  	<div class="total">
-						  		<label>SGST:</label>
-						  		<label>CGST:</label>
-						  		<label>Total Amount</label>
+						  	<div class="total col-md-12">
+						  		<div class="">
+							  		<p>SGST:</p>
+							  		<p>CGST:</p>
+							  		<p>Total Amount</p>
+						  		</div>
 						  	</div>
 						</div>						
 					</div>

@@ -7,15 +7,42 @@ address span{
 .f_right{
 	float: right;
 }
-.total label{
-	 display: block;
-	 float: right;
-}
 .total{
 	border: dotted 0.7px #000;
 }
 .outter-wp{
 	
     overflow: scroll;
+
+}
+
+
+@media (min-width: 992px){
+
+	.total div{
+		 margin-left: 58%;
+	}
+
+}
+@media (min-width: 768px){
+
+	.total div{
+		 margin-left: 60%;
+	}
+}
+
+
+@media print{
+      body{
+        font-family: Consolas  Courier!important;
+      }
+      .col-md-6{
+        width: 50% !important;
+        float: left;      
+      }
+      .col-md-3{
+        width: 25% !important;
+        float: left;
+      }
 
 }
