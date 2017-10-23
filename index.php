@@ -34,20 +34,28 @@
 		?>
 			<div class="outter-wp">
 				<!-- Main Container -->
-				<div id="printCont">
-					<div class="col-md-6 col-sm-6 col-xs-12 f_left">
+				<div id="printCont" class="col-md-12 col-sm-12 col-xs-12">
+					<div class="col-md-8 col-sm-8 col-xs-8 f_left">
 						<h2>Sri Rak Jewelers</h2>
 						<address>
 							<span>678-680, Big Bazzar Street, Coimbatore - 01</span>
 							<span>E- mail: dnbalaramkumar581979@gmail.com</span>
 							<span>Cell: 91502 05732,98438 15732</span>
-							<span>GST NO: 33AQFS5988RIZR</span>
-							<span>HSN/SAC CODE:7113/998892</span>
 						</address>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 f_right">						
+					<div class="col-md-4 col-sm-4 col-xs-4 f_right">
+						<h2>Smith Issue</h2>
+						<p>No:</p>
+						<p>Date:</p>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 border">
+						<span class="col-md-4 col-sm-4 col-xs-4">Tin No:</span>
+						<span class="col-md-4 col-sm-4 col-xs-4">CST NO:</span>
+						<span class="col-md-4 col-sm-4 col-xs-4">Date:</span>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12">						
+						<h3>LALITHA JEWELLERY MART PVT LTD</h3>
 						<address>
-							<span><h3>LALITHA JEWELLERY MART PVT LTD</h3></span>
 							<span>NO 53 ICON SAVITHRI GANESH BUILIDING ,HABIBULLAH ROAD,</span>
 							<span>T NAGAR. CHENNAI -17</span>
 							<span>GST NO: ……………………………………………………………………</span>
