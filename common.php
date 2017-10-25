@@ -50,15 +50,8 @@
 			<div class="header-section">
 						<!--menu-right-->
 				<div class="top_menu">
-					<div class="profile_details_left">
-						<ul class="nofitications-dropdown">
-							<li class="dropdown note">
-								<a aria-expanded="false"><i class="fa fa-tasks"></i> <span class="badge blue1">9</span></a>
-							</li>		   							   		
-							<div class="clearfix"></div>	
-						</ul>
-					</div>
-							<div class="clearfix"></div>	
+					<h1 class="title text-center">SRI RAK JEWELERS</h1>
+					<div class="clearfix"></div>	
 							<!--//profile_details-->
 				</div>
 						<!--//menu-right-->

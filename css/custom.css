@@ -7,17 +7,14 @@ address span{
 .f_right{
 	float: right;
 }
-.total{
-	border: dotted 0.7px #000;
-}
 .outter-wp{
 	
     overflow: scroll;
 
 }
 #printCont{
-
-	border: 0.5px solid #000;
+	border: 0.5px solid #c5c5c5;
+    border-radius: 2px;
 }
 .border{
     border: 0;
@@ -25,7 +22,18 @@ address span{
     border-bottom: 1px solid #eee;
 
 }
+.top_menu{
+	padding: 20px 0px;
+}
+.title{
+	margin: 0px;
+	color: #fff;
+}
+.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
 
+	font-weight: 400;
+	color: #000;
+}
 
 @media (min-width: 992px){
 
@@ -34,13 +42,40 @@ address span{
 	}
 
 }
-@media (min-width: 768px){
+@media (max-width: 768px){
 
 	.total div{
-		 margin-left: 60%;
+		 margin-left: 62%;
+	}
+	.total p{
+		font-size: small;
+	}
+	#printCont{
+		font-size: small;	
+	}
+	#printCont h2,#printCont h3{
+		font-size: x-large;
 	}
 }
+@media screen and (max-width:425px){
+	.total p{
+		font-size: small;
+	}
+	#printCont{
+		font-size: x-small;
+		padding: 5px !important;	
+	}
+	#printCont h2{
+		font-size: x-large;
+	}
+	#printCont h3{
+		font-size: large;
+	}
 
+	.from,.to{
+		width: 100%;
+	}
+}
 
 @media print{
       body{

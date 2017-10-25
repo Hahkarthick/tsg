@@ -9,13 +9,16 @@
 		$(document).ready(function(){
 	      $('#print').on('click',function(){
 	         $('#printCont').printThis({
-	                 debug: false,           // show the iframe for debugging
+	                 debug: true,           // show the iframe for debugging
 	                 importCSS: false,        // import parent page css
 	                 importStyle: true,     // import style tags
 	                 printContainer: true,   // print outer container/$.selector
 	                 loadCSS: ["tsg/css/custom.css","tsg/css/style.css","tsg/css/bootstrap.min.css"],            // load an additional css file - load multiple stylesheets with an array []
 	                 header: "",
 	                         // "<h4 class='header col-md-12'>"+paymentType+"</h4>",           // prefix to html
+	                 footer:"<h4 class='f_right'>For<b>SRI RAK JEWELLERS</h4><br>"+
+	                 			"<p class='f_left'>Smith Signature</p>"+
+	                 			"<p class='f_right'>Partner</p>",
 	                 pageTitle: "",          // add title to print page
 	                 removeInline: false,    // remove all inline styles
 	                 printDelay: 333,        // variable print delay
@@ -35,15 +38,15 @@
 			<div class="outter-wp">
 				<!-- Main Container -->
 				<div id="printCont" class="col-md-12 col-sm-12 col-xs-12">
-					<div class="col-md-8 col-sm-8 col-xs-8 f_left">
-						<h2>Sri Rak Jewelers</h2>
+					<div class="col-md-8 col-sm-8 col-xs-8 f_left from">
+						<h2>SRI RAK JEWELLERS</h2>
 						<address>
 							<span>678-680, Big Bazzar Street, Coimbatore - 01</span>
 							<span>E- mail: dnbalaramkumar581979@gmail.com</span>
 							<span>Cell: 91502 05732,98438 15732</span>
 						</address>
 					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4 f_right">
+					<div class="col-md-4 col-sm-4 col-xs-4 f_right to">
 						<h2>Smith Issue</h2>
 						<p>No:</p>
 						<p>Date:</p>
@@ -63,7 +66,7 @@
 					</div>					
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="table-responsive">          
-						  	<table class="table">
+						  	<table class="table table-bordered">
 								<thead>
 								  <tr>
 									<th>Sl No</th>
@@ -76,28 +79,28 @@
 								</thead>
 								<tbody>
 								  <tr>
-									<td>1</td>
-									<td>Anna</td>
-									<td>Pitt</td>
-									<td>35</td>
-									<td>New York</td>
-									<td>USA</td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
 								  </tr>
 								  <tr>
-									<td>1</td>
-									<td>Anna</td>
-									<td>Pitt</td>
-									<td>35</td>
-									<td>New York</td>
-									<td>USA</td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
 								  </tr>
 								  <tr>
-									<td>1</td>
-									<td>Anna</td>
-									<td>Pitt</td>
-									<td>35</td>
-									<td>New York</td>
-									<td>USA</td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
 								  </tr>
 								</tbody>
 						  	</table>
@@ -105,7 +108,7 @@
 						  		<div class="">
 							  		<p>SGST:</p>
 							  		<p>CGST:</p>
-							  		<p>Total Amount</p>
+							  		<p>Total:</p>
 						  		</div>
 						  	</div>
 						</div>						
