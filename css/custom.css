@@ -34,6 +34,9 @@ address span{
 	font-weight: 400;
 	color: #000;
 }
+.table input{
+	width: 100%;
+}
 
 @media (min-width: 992px){
 

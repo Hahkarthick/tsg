@@ -52,8 +52,8 @@
 						<p>Date:</p>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12 border">
-						<span class="col-md-4 col-sm-4 col-xs-4">Tin No:</span>
-						<span class="col-md-4 col-sm-4 col-xs-4">CST NO:</span>
+						<span class="col-md-4 col-sm-4 col-xs-4">Tin No:33776262182</span>
+						<span class="col-md-4 col-sm-4 col-xs-4">CST NO:265634</span>
 						<span class="col-md-4 col-sm-4 col-xs-4">Date:</span>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">						
@@ -74,7 +74,8 @@
 									<th>Quantity</th>
 									<th>Purity</th>
 									<th>Net GMS</th>
-									<th>M.Charge Amount</th>
+									<th>M.Charge </th>
+									<th>Amount</th>
 								  </tr>
 								</thead>
 								<tbody>
@@ -85,16 +86,19 @@
 									<td><input type="text"></td>
 									<td><input type="text"></td>
 									<td><input type="text"></td>
-								  </tr>
-								  <tr>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
 									<td><input type="text"></td>
 								  </tr>
 								  <tr>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+									<td><input type="text"></td>
+								  </tr>
+								  <tr>
+									<td><input type="text"></td>
 									<td><input type="text"></td>
 									<td><input type="text"></td>
 									<td><input type="text"></td>
@@ -106,8 +110,8 @@
 						  	</table>
 						  	<div class="total col-md-12">
 						  		<div class="">
-							  		<p>SGST:</p>
-							  		<p>CGST:</p>
+							  		<p>SGST:2.5%</p>
+							  		<p>CGST:2.5%</p>
 							  		<p>Total:</p>
 						  		</div>
 						  	</div>
