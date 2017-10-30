@@ -52,9 +52,9 @@
 						<p>Date:</p>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12 border">
-						<span class="col-md-4 col-sm-4 col-xs-4">Tin No:33776262182</span>
-						<span class="col-md-4 col-sm-4 col-xs-4">CST NO:265634</span>
-						<span class="col-md-4 col-sm-4 col-xs-4">Date:</span>
+						<span class="col-md-4 col-sm-4 col-xs-12">Tin No:33776262182</span>
+						<span class="col-md-4 col-sm-4 col-xs-12">CST NO:265634</span>
+						<span class="col-md-4 col-sm-4 col-xs-12">Date:</span>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">						
 						<h3>LALITHA JEWELLERY MART PVT LTD</h3>
@@ -71,7 +71,7 @@
 								  <tr>
 									<th>Sl No</th>
 									<th>Paticulars</th>
-									<th>Quantity</th>
+									<th>Weight</th>
 									<th>Purity</th>
 									<th>Net GMS</th>
 									<th>M.Charge </th>
@@ -80,27 +80,27 @@
 								</thead>
 								<tbody>
 								  <tr>
+									<td class="sm_table"><input type="text"></td>
 									<td><input type="text"></td>
+									<td class="sm_table"><input class="weight" type="text"></td>
+									<td><input class="purity" type="text"></td>
+									<td><input class="netGms" type="text"></td>
+									<td><input class="mCharge" type="text"></td>
+									<td><input class="amount" type="text"></td>
+								  </tr>
+								  <tr>
+									<td class="sm_table"><input type="text"></td>
 									<td><input type="text"></td>
-									<td><input type="text"></td>
+									<td class="sm_table"><input type="text"></td>
 									<td><input type="text"></td>
 									<td><input type="text"></td>
 									<td><input type="text"></td>
 									<td><input type="text"></td>
 								  </tr>
 								  <tr>
+									<td class="sm_table"><input type="text"></td>
 									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-								  </tr>
-								  <tr>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
+									<td class="sm_table"><input type="text"></td>
 									<td><input type="text"></td>
 									<td><input type="text"></td>
 									<td><input type="text"></td>

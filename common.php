@@ -26,6 +26,7 @@
 	<script src="js/light.js"></script>	
 	<script src="js/radar.js"></script>	
 	<script src="js/bootstrap.min.js"></script>	
+	<script src="js/custom.js"></script>	
 	<!-- <link href="css/barChart.css" rel='stylesheet' type='text/css' /> -->
 	<link href="css/fabochart.css" rel='stylesheet' type='text/css' />
 	<!--clock init-->
@@ -65,7 +66,7 @@
 				<!--/sidebar-menu-->
 				<div class="sidebar-menu">
 					<header class="logo">
-					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span id="logo"> <h1>Augment</h1></span> 
+					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span id="logo"> <h1></h1></span> 
 						<!--<img id="logo" src="" alt="Logo"/>--> 
 					  </a> 
 					</header>
@@ -105,7 +106,7 @@
 									 </li>
 									 <li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Issue Bill Local</span></a></li>
 									 <li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Rak Stock View</span></a></li>
-									 <li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Non-Gst Member Reciept</span></a></li>
+									 <li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Non-GST Member Reciept</span></a></li>
 								  </ul>
 								</div>
 							  </div>

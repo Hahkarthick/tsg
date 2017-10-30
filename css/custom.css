@@ -37,7 +37,9 @@ address span{
 .table input{
 	width: 100%;
 }
-
+.sm_table{
+	width: 8%;
+}
 @media (min-width: 992px){
 
 	.total div{
