@@ -66,59 +66,51 @@
 					</div>					
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="table-responsive">          
-						  	<table class="table table-bordered">
-								<thead>
-								  <tr>
-									<th>Sl No</th>
-									<th>Paticulars</th>
-									<th>Weight</th>
-									<th>Purity</th>
-									<th>Net GMS</th>
-									<th>M.Charge </th>
-									<th>Amount</th>
-								  </tr>
-								</thead>
-								<tbody>
-								  <tr>
-									<td class="sm_table"><input type="text"></td>
-									<td><input type="text"></td>
-									<td class="sm_table"><input class="weight" type="text"></td>
-									<td><input class="purity" type="text"></td>
-									<td><input class="netGms" type="text"></td>
-									<td><input class="mCharge" type="text"></td>
-									<td><input class="amount" type="text"></td>
-								  </tr>
-								  <tr>
-									<td class="sm_table"><input type="text"></td>
-									<td><input type="text"></td>
-									<td class="sm_table"><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-								  </tr>
-								  <tr>
-									<td class="sm_table"><input type="text"></td>
-									<td><input type="text"></td>
-									<td class="sm_table"><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-								  </tr>
-								</tbody>
-						  	</table>
+							<input type="hidden" id="form_inc" value="1" name="form_inc">
+							<form method="POST">
+							  	<table data-id="1" id="usertbl" class="table table-bordered">
+									<thead>
+									  <tr>
+										<th>Sl No</th>
+										<th>Paticulars</th>
+										<th>Weight</th>
+										<th>Purity</th>
+										<th>Net GMS</th>
+										<th>M.Charge </th>
+										<th>Amount</th>
+										<th></th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr class="particular_list" data-id="1" id='rec_1'>
+										<td class="sm_table"><input type="text" value="0"></td>
+										<td><input type="text" value=""></td>
+										<td class="sm_table"><input class="weight" type="text" value=""></td>
+										<td><input class="purity" value="" type="text"></td>
+										<td><input class="netGms" value="" type="text"></td>
+										<td><input class="mCharge" value="" type="text"></td>
+										<td><input class="amount" value="" type="text"></td>
+						               	<td>
+						                    <span data-id="rec_1" class="delete_row glyphicon glyphicon-remove"></span>
+						                   <!-- <input type="hidden" name="form_inc" value="1">                   -->
+						                </td>
+									  </tr>
+									</tbody>
+							  	</table>
+						  	</form>
 						  	<div class="total col-md-12">
 						  		<div class="">
-							  		<p>SGST:2.5%</p>
-							  		<p>CGST:2.5%</p>
-							  		<p>Total:</p>
+						  			<p class="totalCol">Net Amount:</p>
+							  		<p class="sgst">SGST:2.5%</p>
+							  		<p class="cgst">CGST:2.5%</p>
+							  		<p class="sumTotal">Total:<span></span><p>
 						  		</div>
 						  	</div>
 						</div>						
 					</div>
 				</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
+						<button type="button" data-id="1" id="new_row" class="btn btn-warning">Add</button>
 						<button class="btn btn-info " id="print">Print</button>
 					</div>
 
