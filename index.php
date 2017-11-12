@@ -89,10 +89,10 @@
 										<td><input class="purity" value="" type="text"></td>
 										<td><input class="netGms" value="" type="text"></td>
 										<td><input class="mCharge" value="" type="text"></td>
-										<td><input class="amount" value="" type="text"></td>
+										<td><input class="amount next_row" value="" type="text"></td>
 						               	<td>
+						                  	<i data-id="1" class="fa fa-plus trigAddRow" aria-hidden="true"></i>
 						                    <span data-id="rec_1" class="delete_row glyphicon glyphicon-remove"></span>
-						                   <!-- <input type="hidden" name="form_inc" value="1">                   -->
 						                </td>
 									  </tr>
 									</tbody>
@@ -100,9 +100,9 @@
 						  	</form>
 						  	<div class="total col-md-12">
 						  		<div class="">
-						  			<p class="totalCol">Net Amount:</p>
-							  		<p class="sgst">SGST:2.5%</p>
-							  		<p class="cgst">CGST:2.5%</p>
+						  			<p class="totalCol">Net Amount:<span></span></p>
+							  		<p data-value="2.5" class="sgst">SGST:2.5%</p>
+							  		<p data-value="2.5" class="cgst">CGST:2.5%</p>
 							  		<p class="sumTotal">Total:<span></span><p>
 						  		</div>
 						  	</div>
@@ -110,7 +110,7 @@
 					</div>
 				</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
-						<button type="button" data-id="1" id="new_row" class="btn btn-warning">Add</button>
+						<input type="hidden" data-id="1" id="new_row" class="btn btn-warning">
 						<button class="btn btn-info " id="print">Print</button>
 					</div>
 

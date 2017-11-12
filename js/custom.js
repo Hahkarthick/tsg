@@ -1,6 +1,7 @@
 $(document).ready(function(){
 $(".amount").val(0);
 //alert('entred');
+removeRec();
   $('.weight ,.purity').on('change',function(){
       var weight=$(this,'.weight').val();
       //alert(weight);
@@ -34,8 +35,8 @@ $(".amount").val(0);
             "<td><input class='purity' value='' type='text'></td>"+
             "<td><input class='netGms' value='' type='text'></td>"+
             "<td><input class='mCharge' value='' type='text'></td>"+
-            "<td><input class='amount' value='' type='text'></td>"+
-            "<td><span data-id='rec_"+inc+"'  class='delete_row  glyphicon glyphicon-remove'></span></td></tr>");   
+            "<td><input class='amount next_row' value='' type='text'></td>"+
+            "<td><i  data-id='"+inc+"' class='fa fa-plus trigAddRow' aria-hidden='true'></i><span data-id='rec_"+inc+"'  class='delete_row  glyphicon glyphicon-remove'></span></td></tr>");   
     container.appendTo($('#usertbl'));
      $("input[name='drug_code_"+inc+"']").focus();
     removeRec();
@@ -47,7 +48,11 @@ function autoSum() {
   $(".amount").each(function(){
     sum += parseInt($(this).val());
   });
-  $('.totalCol').text(sum);
+  $('.totalCol span').html(sum);
+  var cgst= ((sum*($('.cgst').attr("data-value")))/100);
+  var sgst= ((sum*($('.sgst').attr("data-value")))/100);
+  var totalAmount=cgst+sgst+sum;
+  $('.sumTotal span').html(totalAmount);
 }
  function removeRec(){
   $('#usertbl').find('.delete_row').click(function(){
@@ -65,5 +70,13 @@ function autoSum() {
            $(this).next('input').focus();
       }
     }
+  });
+  $('.trigAddRow').on('click',function(){
+      var next_row=$('#new_row').attr('data-id');
+      var next_btn=$(this).attr('data-id');
+        if (next_row==next_btn) {
+         $( "#new_row" ).trigger( "click" );
+           $(this).next('input').focus();
+      }
   });
 }
