@@ -48,13 +48,13 @@
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4 f_right to">
 						<h2>Smith Issue</h2>
-						<p>No:</p>
+						<p>V.No: SLBL / </p>
 						<p>Date:</p>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12 border">
 						<span class="col-md-4 col-sm-4 col-xs-12">Tin No:33776262182</span>
 						<span class="col-md-4 col-sm-4 col-xs-12">CST NO:265634</span>
-						<span class="col-md-4 col-sm-4 col-xs-12">Date:</span>
+						<span class="col-md-4 col-sm-4 col-xs-12">Date: 20-10-14</span>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">						
 						<h3>LALITHA JEWELLERY MART PVT LTD</h3>
@@ -89,10 +89,10 @@
 										<td><input class="purity" value="" type="text"></td>
 										<td><input class="netGms" value="" type="text"></td>
 										<td><input class="mCharge" value="" type="text"></td>
-										<td><input class="amount" value="" type="text"></td>
+										<td><input class="amount next_row" value="" type="text"></td>
 						               	<td>
+						                  	<i data-id="1" class="fa fa-plus trigAddRow" aria-hidden="true"></i>
 						                    <span data-id="rec_1" class="delete_row glyphicon glyphicon-remove"></span>
-						                   <!-- <input type="hidden" name="form_inc" value="1">                   -->
 						                </td>
 									  </tr>
 									</tbody>
@@ -100,9 +100,9 @@
 						  	</form>
 						  	<div class="total col-md-12">
 						  		<div class="">
-						  			<p class="totalCol">Net Amount:</p>
-							  		<p class="sgst">SGST:2.5%</p>
-							  		<p class="cgst">CGST:2.5%</p>
+						  			<p class="totalCol">Net Amount:<span></span></p>
+							  		<p data-value="2.5" class="sgst">SGST:2.5%</p>
+							  		<p data-value="2.5" class="cgst">CGST:2.5%</p>
 							  		<p class="sumTotal">Total:<span></span><p>
 						  		</div>
 						  	</div>
@@ -110,7 +110,7 @@
 					</div>
 				</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
-						<button type="button" data-id="1" id="new_row" class="btn btn-warning">Add</button>
+						<input type="hidden" data-id="1" id="new_row" class="btn btn-warning">
 						<button class="btn btn-info " id="print">Print</button>
 					</div>
 
