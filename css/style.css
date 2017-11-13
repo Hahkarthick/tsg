@@ -309,14 +309,14 @@ span.name-caret {
     text-align: center;
     font-weight: 400;
 }
-.down  a img {
+/*.down  a img {
          border-radius: 50%;
     -o-border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
-    border: 3px solid #002561;
+   border: 3px solid #002561;
 }
-
+*/
 .down{
 	padding: 26px 0 30px;
     text-align: center;
