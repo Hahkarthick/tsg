@@ -61,6 +61,9 @@ address span{
 	#printCont h2,#printCont h3{
 		font-size: x-large;
 	}
+	.action div{
+		width: 60px;
+	}
 }
 @media screen and (max-width:425px){
 	.total p{

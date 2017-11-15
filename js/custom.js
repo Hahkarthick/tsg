@@ -50,7 +50,9 @@ function autoSum() {
   });
   $('.totalCol span').html(sum);
   var cgst= ((sum*($('.cgst').attr("data-value")))/100);
+  $('.cgst span').html(cgst);
   var sgst= ((sum*($('.sgst').attr("data-value")))/100);
+  $('.sgst span').html(sgst);
   var totalAmount=cgst+sgst+sum;
   $('.sumTotal span').html(totalAmount);
 }

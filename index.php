@@ -90,9 +90,11 @@
 										<td><input class="netGms" value="" type="text"></td>
 										<td><input class="mCharge" value="" type="text"></td>
 										<td><input class="amount next_row" value="" type="text"></td>
-						               	<td>
-						                  	<i data-id="1" class="fa fa-plus trigAddRow" aria-hidden="true"></i>
-						                    <span data-id="rec_1" class="delete_row glyphicon glyphicon-remove"></span>
+						               	<td class="action">
+						               		<div>
+						                  	<span data-id="1" class="fa fa-plus trigAddRow " aria-hidden="true"></span>
+						                    <span data-id="rec_1" class=" delete_row glyphicon glyphicon-remove"></span>
+						                    </div>
 						                </td>
 									  </tr>
 									</tbody>
@@ -101,8 +103,8 @@
 						  	<div class="total col-md-12">
 						  		<div class="">
 						  			<p class="totalCol">Net Amount:<span></span></p>
-							  		<p data-value="2.5" class="sgst">SGST:2.5%</p>
-							  		<p data-value="2.5" class="cgst">CGST:2.5%</p>
+							  		<p data-value="2.5" class="sgst">SGST:2.5%<span></span></p>
+							  		<p data-value="2.5" class="cgst">CGST:2.5%<span></span></p>
 							  		<p class="sumTotal">Total:<span></span><p>
 						  		</div>
 						  	</div>
