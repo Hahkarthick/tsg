@@ -1,5 +1,48 @@
 <?php
 include('dbfunctions.php');
+<<<<<<< HEAD
+include('loginlog_ctrlr.php');
+$psalt='ARH2017';
+
+//insert for forgot password
+function insertForgotPassword($user_email, &$token){
+	$timex = date('d-m-Y H:i:s:u');
+	$authtoken = md5($psalt . $user_email . $timex);
+	$token=$authtoken;
+	$sql="insert into forgotpassword(user_email, authtoken) values  (:user_email,:authtoken) ";
+	$valueArray = array(
+			':user_email'=>$user_email, 
+			':authtoken'=>$authtoken);
+
+	$recid=dbInsert($sql, $valueArray, true);
+	return $recid;
+}
+
+function userEmailExists($user_email){
+
+	$sql="select email  from users " .
+				" where email=:email " ;
+
+	$valueArray = array(':email'=>$user_email);
+
+	$db = Database::getInstance()->getConnection();
+	$query = $db->prepare($sql);
+	$query->execute($valueArray);
+	$query->setFetchMode(PDO::FETCH_ASSOC);
+	
+	$result = $query->fetch();
+
+
+	if($result['email']==null){
+		return false;	
+	}
+	
+	//user exists
+	return true;
+	
+}
+=======
+>>>>>>> fc7e5e3c9a8b8640106d4fd07198930a97353550
 
 function updateUserStatus($activate,$status){
 	$sql="update patient set status=:status where patient_id=:id";
@@ -8,7 +51,16 @@ function updateUserStatus($activate,$status){
 	return $rowsAffected;
 
 }
+<<<<<<< HEAD
+function updateStaffStatus($activate,$status){
+	$sql="update staff set status=:status where staff_id=:id";
+	$valueArray=array(':status'=>$status,':id'=>$activate);
+	$rowsAffected=dbUpdate($sql,$valueArray);
+	return $rowsAffected;
 
+}
+=======
+>>>>>>> fc7e5e3c9a8b8640106d4fd07198930a97353550
 function resetForgotPwd($user_email,$pwd){
 	
 	global $psalt;
@@ -428,4 +480,8 @@ $staffupdate=dbUpdate($sql,$valueArray,false);
 
  }
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> fc7e5e3c9a8b8640106d4fd07198930a97353550

@@ -3,7 +3,7 @@
 	function externalLinks(){
 ?>
 	<head>
-	<title>Sri Rak Jewelers</title>
+	<title>SRI RAK Jewelers</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Jewelers,gold,Rak,Sri rak Jewelers" />
@@ -73,8 +73,8 @@
 					<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 			<!--/down-->
 							<div class="down">	
-									  <a href="index.html"><img src="images/admin.jpg"></a>
-									  <a href="index.html"><span class=" name-caret">Sri Rak</span></a>
+									  <a href="index.html"><img src="images/admin.png"></a>
+									  <a href="index.html"><span class=" name-caret">SRI RAK</span></a>
 									<ul>
 									<li><a class="tooltips" href="index.html"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
 										<li><a class="tooltips" href="index.html"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
@@ -86,27 +86,39 @@
 									<ul id="menu" >
 										 <li id="menu-academico" ><a href="#"><i class="fa fa-table"></i> <span>Smith Bill</span> <span class="fa fa-angle-right" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
-											<li id="menu-academico-avaliacoes" ><a href="tabs.html">Reciept Bill Local</a></li>
-											<li id="menu-academico-boletim" ><a href="widget.html">Local Bill</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="calender.html">Other State Bill</a></li>
-											
+											<li id="menu-academico-avaliacoes" ><a href="issue_bill.php">Issue Local</a></li>
+										    <li id="menu-academico-boletim" ><a href="issue_state.php">Issue Other State</a></li>
+									   	    <li id="menu-academico-avaliacoes" ><a href="receipt_local.php">Receipt Local</a></li>
+										    <li id="menu-academico-boletim" ><a href="receipt_non_gst.php">Receipt Non-GST</a></li>
+									
 										  </ul>
 										</li>
 										 <li id="menu-academico" ><a href="#"><i class="fa fa-file-text-o"></i> <span>Sales Bill</span> <span class="fa fa-angle-right" style="float: right"></span></a>
 											 <ul id="menu-academico-sub" >
-												<li id="menu-academico-avaliacoes" ><a href="forms.html">Local Bill</a></li>
-												<li id="menu-academico-boletim" ><a href="validation.html">Other State Bill</a></li>
+												<li id="menu-academico-avaliacoes" ><a href="sales_local.php">Local Bill</a></li>
+												<li id="menu-academico-boletim" ><a href="sales_state.php">Other State Bill</a></li>
 											  </ul>
 										 </li>
 									<li id="menu-academico" ><a href="#"><i class="lnr lnr-book"></i> <span>Purchase Bill</span> <span class="fa fa-angle-right" style="float: right"></span></a>
 										  <ul id="menu-academico-sub" >
-										    <li id="menu-academico-avaliacoes" ><a href="login.html">Local Bill</a></li>
-										    <li id="menu-academico-boletim" ><a href="register.html">Other State Bill</a></li>
+										    <li id="menu-academico-avaliacoes" ><a href="purchase_local.php">Local Bill</a></li>
+										    <li id="menu-academico-boletim" ><a href="purchase_state.php">Other State Bill</a></li>
 										  </ul>
 									 </li>
-									 <li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Issue Bill Local</span></a></li>
-									 <li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Rak Stock View</span></a></li>
-									 <li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Non-GST Member Reciept</span></a></li>
+									 <li><a href="gold_issue_bill.php"><i class="lnr lnr-layers"></i> <span>Gold Issue Bill</span></a></li>									
+									 <li id="menu-academico" ><a href="#"><i class="lnr lnr-map"></i> <span>Cash Bill</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+										  <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="cash_receipt.php">Cash Receipt</a></li>
+										    <li id="menu-academico-boletim" ><a href="cash_issue.php">Cash Issue</a></li>
+										  </ul>
+									 </li>
+									 <li id="menu-academico" ><a href="#"><i class="lnr lnr-chart-bars"></i> <span>Registration</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+										  <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="registration.php">Company Registration</a></li>
+										    <li id="menu-academico-boletim" ><a href="hsn_code.php">HSN Code</a></li>
+										  </ul>
+									 </li>
+									  <li><a href="reports.php"><i class="lnr lnr-pencil"></i> <span>Reports</span></a></li>									
 								  </ul>
 								</div>
 							  </div>

@@ -26,34 +26,6 @@
 	                 removeScripts: false    // remove script tags before appending
 	         });
 	    	});
-	    	
-	function proceed(){               
-				$.ajax({
-				type: "POST",
-				url: "reg_content.php",
-				data: $('form').serialize(),
-				success: function(results) {
-				  if (results==1) {
-					$("#result").html("Registered Successfully");
-					$('#result')[0].scrollIntoView(true);
-					$("#result").addClass("alert alert-success");           
-					  window.setTimeout(function(){
-					  //window.location.href = "patient_listing.php";
-					  }, 3000);
-					$("#proceed").hide();
-				  }else{
-					$('#error').html(results);
-					$('#error')[0].scrollIntoView(true);
-					$('#error').addClass("alert alert-danger");
-					}
-				},
-				  error: function(XMLHttpRequest, textStatus, errorThrown) {            
-								  $('.result').text(textStatus,errorThrown);
-								  $('#error').html(textStatus,errorThrown);
-								  $('#error').addClass("alert alert-danger");
-				  }
-				});
-		 };
     	});
 	</script>
    <div class="page-container">
@@ -76,13 +48,14 @@
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4 f_right to">
 						<h2>Smith Issue</h2>
-						<p>No:</p>
+						<p>V.No: SLBL / </p>
+						<p>State Code : 33 </p>
 						<p>Date:</p>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12 border">
 						<span class="col-md-4 col-sm-4 col-xs-12">Tin No:33776262182</span>
 						<span class="col-md-4 col-sm-4 col-xs-12">CST NO:265634</span>
-						<span class="col-md-4 col-sm-4 col-xs-12">Date:</span>
+						<span class="col-md-4 col-sm-4 col-xs-12">Date: 20-10-14</span>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">						
 						<h3>LALITHA JEWELLERY MART PVT LTD</h3>
@@ -117,12 +90,10 @@
 										<td><input class="purity" value="" type="text"></td>
 										<td><input class="netGms" value="" type="text"></td>
 										<td><input class="mCharge" value="" type="text"></td>
-										<td><input class="amount next_row" value="" type="text"></td>
-						               	<td class="action">
-						               		<div>
-						                  	<span data-id="1" class="fa fa-plus trigAddRow " aria-hidden="true"></span>
-						                    <span data-id="rec_1" class=" delete_row glyphicon glyphicon-remove"></span>
-						                    </div>
+										<td><input class="amount" value="" type="text"></td>
+						               	<td>
+						                    <span data-id="rec_1" class="delete_row glyphicon glyphicon-remove"></span>
+						                   <!-- <input type="hidden" name="form_inc" value="1">                   -->
 						                </td>
 									  </tr>
 									</tbody>
@@ -130,9 +101,9 @@
 						  	</form>
 						  	<div class="total col-md-12">
 						  		<div class="">
-						  			<p class="totalCol">Net Amount:<span></span></p>
-							  		<p data-value="2.5" class="sgst">SGST:2.5%<span></span></p>
-							  		<p data-value="2.5" class="cgst">CGST:2.5%<span></span></p>
+						  			<p class="totalCol">Net Amount:</p>
+							  		<p class="sgst">SGST:2.5%</p>
+							  		<p class="cgst">CGST:2.5%</p>
 							  		<p class="sumTotal">Total:<span></span><p>
 						  		</div>
 						  	</div>
@@ -140,7 +111,7 @@
 					</div>
 				</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
-						<input type="hidden" data-id="1" id="new_row" class="btn btn-warning">
+						<button type="button" data-id="1" id="new_row" class="btn btn-warning">Add</button>
 						<button class="btn btn-info " id="print">Print</button>
 					</div>
 

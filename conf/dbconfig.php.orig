@@ -4,9 +4,15 @@
 
 	  protected static $_instance;
 	  protected $_connection;
+<<<<<<< HEAD
+	  protected $_dns = 'mysql:host=localhost;dbname=gst';
+	  protected $_username = 'root';
+	  protected $_password = '#@#@1995';
+=======
 	  protected $_dns = 'mysql:host=98.130.0.89;dbname=pelluci_santhosh';
 	  protected $_username = 'pelluci_calc';
 	  protected $_password = 'Santhosh2017';
+>>>>>>> fc7e5e3c9a8b8640106d4fd07198930a97353550
 
 	  /**
 	  * Singleton pattern implementation makes "new" unavailable
