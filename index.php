@@ -104,7 +104,7 @@ include ('conf/dbfunctions.php');
 								<span id="result" class="col-md-12 col-sm-12 col-xs-12"></span>
 								<span id="error" class="col-md-12 col-sm-12 col-xs-12"></span>
 						</div>
-						<div class="table-responsive">
+						<div class="table table-responsive">
 							<input type="hidden" id="form_inc" value="1" name="form_inc">
 							<form method="POST">
 							  	<table data-id="1" id="usertbl" class="table table-bordered">
