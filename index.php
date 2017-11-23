@@ -28,12 +28,14 @@ include ('conf/dbfunctions.php');
 	         });
 	    	});
 				$('#proceed').on('click',function(){
-						var create=$('form').serialize()
-						// alert(create);
+						var total=$('.sumTotal span').html();
+
 						$.ajax({
 						type: "POST",
 						url: "bill_cont.php",
-						data:create,
+						data:$('form').serialize()+{
+		        	  'total':total
+							},
 						success: function(results) {
 							if (results==1) {
 								$("#result").html("Registered Successfully");
