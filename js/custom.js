@@ -2,26 +2,7 @@ $(document).ready(function() {
   $(".amount").val(0);
   //alert('entred');
   removeRec();
-  $('.weight ,.purity').on('change', function() {
-    var weight = $(this, '.weight').val();
-    //alert(weight);
-    var purity = $(this, '.purity').val();
-    //alert(purity);
-    //var netgms=$('').val();
-    var result = (weight * purity) / 100;
-
-    $(this).parent().siblings().find('.netGms').val(result);
-
-
-  });
-  $('.mCharge').on('change', function() {
-    var weight = $('.weight').val();
-    var mCharge = $(this).val();
-    var result = (weight * mCharge);
-    $(this).closest('tr').find('.amount').val(result);
-    autoSum();
-  });
-
+  calculation();
   $('#new_row').click(function() {
     var val = $(this).attr("data-id");
     var inc = parseInt(val) + 1;
@@ -78,6 +59,7 @@ function removeRec() {
 		       $(this).next('input').focus();
 		 	}
 	  }
+      calculation();
 	});
   $('.trigAddRow').on('click', function(event) {
 	  	var next_row=$('#new_row').attr('data-id');
@@ -86,5 +68,28 @@ function removeRec() {
 		     $( "#new_row" ).trigger( "click" );
 		       $(this).next('input').focus();
 		 	}
+      calculation();
 	});
+}
+function calculation(){
+  $('.weight ,.purity').on('change', function() {
+    var weight = $(this, '.weight').val();
+    //alert(weight);
+    var purity = $(this, '.purity').val();
+    //alert(purity);
+    //var netgms=$('').val();
+    var result = (weight * purity) / 100;
+
+    $(this).parent().siblings().find('.netGms').val(result);
+
+
+  });
+  $('.mCharge').on('change', function() {
+    var weight = $('.weight').val();
+    var mCharge = $(this).val();
+    var result = (weight * mCharge);
+    $(this).closest('tr').find('.amount').val(result);
+    autoSum();
+  });
+
 }
