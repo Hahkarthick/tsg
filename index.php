@@ -27,6 +27,34 @@ include ('conf/dbfunctions.php');
 	                 removeScripts: false    // remove script tags before appending
 	         });
 	    	});
+				$('#proceed').on('click',function(){
+						var create=$('form').serialize()
+						// alert(create);
+						$.ajax({
+						type: "POST",
+						url: "bill_cont.php",
+						data:create,
+						success: function(results) {
+							if (results==1) {
+								$("#result").html("Registered Successfully");
+								$('#result')[0].scrollIntoView(true);
+								$("#result").addClass("alert alert-success");
+								$('.print').show() && $('#proceed').hide();
+									 print();
+							}else{
+								$('#error').html("Registration Failed");
+								$('#error')[0].scrollIntoView(true);
+								$('#error').addClass("alert alert-danger");
+								}
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+						 $('.result').text(textStatus,errorThrown);
+													$('#error').html(textStatus,errorThrown);
+													$('#error')[0].scrollIntoView(true);
+													$('#error').addClass("alert alert-danger");
+						}
+						});
+			});
 
 				$('.company').on('change',function(){
 						var companyId=$(this).val();
@@ -122,13 +150,13 @@ include ('conf/dbfunctions.php');
 									</thead>
 									<tbody>
 									  <tr class="particular_list" data-id="1" id='rec_1'>
-										<td class="sm_table"><input type="text" value="0"></td>
-										<td><input type="text" value=""></td>
-										<td class="sm_table"><input class="weight" type="text" value=""></td>
-										<td><input class="purity" value="" type="text"></td>
-										<td><input class="netGms" value="" type="text"></td>
-										<td><input class="mCharge" value="" type="text"></td>
-										<td><input class="amount next_row" value="" type="text"></td>
+										<td class="sm_table"><input type="text" name="sno_1" value="0"></td>
+										<td><input type="text" value="" name="particular_1"></td>
+										<td class="sm_table"><input class="weight" name="weight_1" type="text" value=""></td>
+										<td><input class="purity" value="" name="purity_1" type="text"></td>
+										<td><input class="netGms" value="" name="netgms_1" type="text"></td>
+										<td><input class="mCharge" value="" name="mcharge_1" type="text"></td>
+										<td><input class="amount next_row" name="amount_1" value="" type="text"></td>
 						               	<td class="action">
 						               		<div>
 						                  	<span data-id="1" class="fa fa-plus trigAddRow " aria-hidden="true"></span>
@@ -152,6 +180,7 @@ include ('conf/dbfunctions.php');
 				</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<input type="hidden" data-id="1" id="new_row" class="btn btn-warning">
+						<button type="button" id="proceed" class="btn btn-success">Submit</button>
 						<button class="btn btn-info " id="print">Print</button>
 					</div>
 

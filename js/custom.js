@@ -9,17 +9,17 @@ removeRec();
       //alert(purity);
       //var netgms=$('').val();
       var result=(weight*purity)/100;
-      
+
       $(this).parent().siblings().find('.netGms').val(result);
-     
-      
+
+
   });
   $('.mCharge').on('change',function(){
     var weight=$('.weight').val();
     var mCharge=$(this).val();
     var result=(weight*mCharge);
      $(this).closest('tr').find('.amount').val(result);
-      autoSum() ;          
+      autoSum() ;
   });
 
   $('#new_row').click(function(){
@@ -29,14 +29,14 @@ removeRec();
      // var inc=++val;
     $(this).attr('data-id',inc);
     var container=$("<tr data-id="+inc+" id='rec_"+inc+"'>"+
-            "<td class='sm_table'><input type='text' value='0'></td>"+
-            "<td> <input type='text' value=''></td>"+
-            "<td class='sm_table'><input class=weight type='text'></td>"+
-            "<td><input class='purity' value='' type='text'></td>"+
-            "<td><input class='netGms' value='' type='text'></td>"+
-            "<td><input class='mCharge' value='' type='text'></td>"+
-            "<td><input class='amount' value='' type='text'></td>"+
-            "<td><span data-id='rec_"+inc+"'  class='delete_row  glyphicon glyphicon-remove'></span></td></tr>");   
+            "<td class='sm_table'><input type='text' name='sno_"+inc+"' value='"+inc+"'></td>"+
+            "<td> <input type='text' name='particular_"+inc+"' value=''></td>"+
+            "<td class='sm_table'><input name='weight_"+inc+"' class=weight type='text'></td>"+
+            "<td><input class='purity' name='purity_"+inc+"' value='' type='text'></td>"+
+            "<td><input class='netGms' name='netgms_"+inc+"' value='' type='text'></td>"+
+            "<td><input class='mCharge' name='mcharge_"+inc+"'  value='' type='text'></td>"+
+            "<td><input class='amount' name='amount_"+inc+"'  value='' type='text'></td>"+
+            "<td><span data-id='rec_"+inc+"'  class='delete_row  glyphicon glyphicon-remove'></span></td></tr>");
     container.appendTo($('#usertbl'));
      $("input[name='drug_code_"+inc+"']").focus();
     removeRec();
