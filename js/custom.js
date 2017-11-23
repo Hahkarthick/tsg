@@ -16,7 +16,7 @@ $(document).ready(function() {
       "<td><input class='purity' name='purity_" + inc + "' value='' type='text'></td>" +
       "<td><input class='netGms' name='netgms_" + inc + "' value='' type='text'></td>" +
       "<td><input class='mCharge' name='mcharge_" + inc + "'  value='' type='text'></td>" +
-      "<td><input class='amount'  data-id='"+inc+"'  name='amount_" + inc + "'  value='' type='text'></td>" +
+      "<td><input class='amount next_row'  data-id='"+inc+"'  name='amount_" + inc + "'  value='' type='text'></td>" +
       "<td>"+
         "<span data-id='"+inc+"' class='fa fa-plus trigAddRow' aria-hidden='true'></span>"+
         "<span data-id='rec_" + inc + "'  class='delete_row  glyphicon glyphicon-remove'></span>"+
