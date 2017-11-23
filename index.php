@@ -150,16 +150,16 @@ include ('conf/dbfunctions.php');
 									</thead>
 									<tbody>
 									  <tr class="particular_list" data-id="1" id='rec_1'>
-										<td class="sm_table"><input type="text" name="sno_1" value="0"></td>
+										<td class="sm_table"><input type="text" name="sno_1" value="1"></td>
 										<td><input type="text" value="" name="particular_1"></td>
 										<td class="sm_table"><input class="weight" name="weight_1" type="text" value=""></td>
 										<td><input class="purity" value="" name="purity_1" type="text"></td>
 										<td><input class="netGms" value="" name="netgms_1" type="text"></td>
 										<td><input class="mCharge" value="" name="mcharge_1" type="text"></td>
-										<td><input class="amount next_row" name="amount_1" value="" type="text"></td>
+										<td><input class="amount next_row" data-id="1" name="amount_1" value="" type="text"></td>
 						               	<td class="action">
 						               		<div>
-						                  	<span data-id="1" class="fa fa-plus trigAddRow " aria-hidden="true"></span>
+						                  	<span data-id="1" class="fa fa-plus trigAddRow" aria-hidden="true"></span>
 						                    <span data-id="rec_1" class=" delete_row glyphicon glyphicon-remove"></span>
 						                    </div>
 						                </td>
@@ -170,8 +170,8 @@ include ('conf/dbfunctions.php');
 						  	<div class="total col-md-12">
 						  		<div class="">
 						  			<p class="totalCol">Net Amount:<span></span></p>
-							  		<p data-value="2.5" class="sgst">SGST:2.5%<span></span></p>
-							  		<p data-value="2.5" class="cgst">CGST:2.5%<span></span></p>
+							  		<p data-value="2.5" class="sgst">SGST:2.5%=<span></span></p>
+							  		<p data-value="2.5" class="cgst">CGST:2.5%=<span></span></p>
 							  		<p class="sumTotal">Total:<span></span><p>
 						  		</div>
 						  	</div>
@@ -179,7 +179,7 @@ include ('conf/dbfunctions.php');
 					</div>
 				</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
-						<input type="hidden" data-id="1" id="new_row" class="btn btn-warning">
+						<button type="hidden" data-id="1" id="new_row" class="btn btn-warning">Add</button>
 						<button type="button" id="proceed" class="btn btn-success">Submit</button>
 						<button class="btn btn-info " id="print">Print</button>
 					</div>
