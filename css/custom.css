@@ -40,6 +40,9 @@ address span{
 .sm_table{
 	width: 8%;
 }
+	.action div{
+		width:50px;
+	}
 @media (min-width: 992px){
 
 	.total div{
@@ -47,7 +50,7 @@ address span{
 	}
 
 }
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
 
 	.total div{
 		 margin-left: 62%;
@@ -61,6 +64,7 @@ address span{
 	#printCont h2,#printCont h3{
 		font-size: x-large;
 	}
+
 }
 @media screen and (max-width:425px){
 	.total p{

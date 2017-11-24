@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <?php
+include ('conf/dbfunctions.php');
 	include 'common.php';
-	externalLinks(); 
+	externalLinks();
 ?>
 <body>
 	<script type="text/javascript">
@@ -26,41 +27,67 @@
 	                 removeScripts: false    // remove script tags before appending
 	         });
 	    	});
-	    	
-	function proceed(){               
-				$.ajax({
-				type: "POST",
-				url: "reg_content.php",
-				data: $('form').serialize(),
-				success: function(results) {
-				  if (results==1) {
-					$("#result").html("Registered Successfully");
-					$('#result')[0].scrollIntoView(true);
-					$("#result").addClass("alert alert-success");           
-					  window.setTimeout(function(){
-					  //window.location.href = "patient_listing.php";
-					  }, 3000);
-					$("#proceed").hide();
-				  }else{
-					$('#error').html(results);
-					$('#error')[0].scrollIntoView(true);
-					$('#error').addClass("alert alert-danger");
-					}
-				},
-				  error: function(XMLHttpRequest, textStatus, errorThrown) {            
-								  $('.result').text(textStatus,errorThrown);
-								  $('#error').html(textStatus,errorThrown);
-								  $('#error').addClass("alert alert-danger");
-				  }
+				$('#proceed').on('click',function(){
+						var total=$('.sumTotal span').html();
+						var sgst=$('.sgst span').html();
+						var cgst=$('.cgst span').html();
+						var totalCol=$('.totalCol span').html();
+						//alert(total);
+						$.ajax({
+						type: "POST",
+						url: "bill_cont.php",
+						data:$('form').serialize()+"&total="+total+"&sgst="+sgst+"&cgst="+cgst+"&totalCol="+totalCol,
+						success: function(results) {
+							alert(results);
+							if (results==1) {
+								$("#result").html("Registered Successfully");
+								$('#result')[0].scrollIntoView(true);
+								$("#result").addClass("alert alert-success");
+								$('.print').show() && $('#proceed').hide();
+									 print();
+							}else{
+								$('#error').html(results);
+								$('#error')[0].scrollIntoView(true);
+								$('#error').addClass("alert alert-danger");
+								}
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+						 $('.result').text(textStatus,errorThrown);
+													$('#error').html(textStatus,errorThrown);
+													$('#error')[0].scrollIntoView(true);
+													$('#error').addClass("alert alert-danger");
+						}
+						});
+			});
+
+				$('.company').on('change',function(){
+						var companyId=$(this).val();
+						$.getJSON({
+								type: "POST",
+								url: "compDetailsCont.php",
+								data: "&compId=" + companyId,
+								success: function(results) {
+										var count=Object.keys(results.result[0].comp).length;
+										if (count>0) {
+											$('.address').html("<b>Address:</b>"+results.result[0].comp[0]['address']);
+											$('.mobile').html("<b>Mobile-No:</b>"+results.result[0].comp[0]['mobile']);
+											$('.gst').html("<b>Gst-No:</b>"+results.result[0].comp[0]['gst']);
+											$('.mail_id').html("<b>Email-Id:</b>"+results.result[0].comp[0]['emailid']);
+										};
+								},
+								error: function(XMLHttpRequest, textStatus, errorThrown) {
+										$('#error').html(textStatus,errorThrown);
+										$('#error').addClass("alert alert-danger");
+								}
+						});
 				});
-		 };
     	});
 	</script>
    <div class="page-container">
    <!--/content-inner-->
 	<div class="left-content">
 	   <div class="inner-content">
-		<?php 
+		<?php
 			headerBar();
 		?>
 			<div class="outter-wp">
@@ -84,16 +111,32 @@
 						<span class="col-md-4 col-sm-4 col-xs-12">CST NO:265634</span>
 						<span class="col-md-4 col-sm-4 col-xs-12">Date:</span>
 					</div>
-					<div class="col-md-12 col-sm-12 col-xs-12">						
-						<h3>LALITHA JEWELLERY MART PVT LTD</h3>
-						<address>
-							<span>NO 53 ICON SAVITHRI GANESH BUILIDING ,HABIBULLAH ROAD,</span>
-							<span>T NAGAR. CHENNAI -17</span>
-							<span>GST NO: ……………………………………………………………………</span>
-						</address>
-					</div>					
 					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="table-responsive">          
+						<select data-toggle="tooltip" data-placement="top" title="Select Company" class="company">
+								<option value="none">Select Company</option>
+									<?php
+											$sql="SELECT `id`,`name`	 FROM `company`";
+											$value=array();
+											$row=dbSelectRows($sql,$value);
+											for ($i=0; $i<count($row) ; $i++) {
+									?>
+										<option value="<?php echo $row[$i]['id']?>"><?php echo $row[$i]['name'] ?></option>
+									<?php }
+									?>
+						</select>
+						<address>
+							<span class="address"></span>
+							<span class="mobile"></span>
+							<span class="gst"></span>
+							<span class="mail_id"></span>
+						</address>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div>
+								<span id="result" class="col-md-12 col-sm-12 col-xs-12"></span>
+								<span id="error" class="col-md-12 col-sm-12 col-xs-12"></span>
+						</div>
+						<div class="table table-responsive">
 							<input type="hidden" id="form_inc" value="1" name="form_inc">
 							<form method="POST">
 							  	<table data-id="1" id="usertbl" class="table table-bordered">
@@ -111,16 +154,16 @@
 									</thead>
 									<tbody>
 									  <tr class="particular_list" data-id="1" id='rec_1'>
-										<td class="sm_table"><input type="text" value="0"></td>
-										<td><input type="text" value=""></td>
-										<td class="sm_table"><input class="weight" type="text" value=""></td>
-										<td><input class="purity" value="" type="text"></td>
-										<td><input class="netGms" value="" type="text"></td>
-										<td><input class="mCharge" value="" type="text"></td>
-										<td><input class="amount next_row" value="" type="text"></td>
+										<td class="sm_table"><input type="text" name="sno_1" value="1"></td>
+										<td><input type="text" value="" name="particular_1"></td>
+										<td class="sm_table"><input class="weight" name="weight_1" type="text" value=""></td>
+										<td><input class="purity" value="" name="purity_1" type="text"></td>
+										<td><input class="netGms" value="" name="netgms_1" type="text"></td>
+										<td><input class="mCharge" value="" name="mcharge_1" type="text"></td>
+										<td><input class="amount next_row" data-id="1" name="amount_1" value="" type="text"></td>
 						               	<td class="action">
 						               		<div>
-						                  	<span data-id="1" class="fa fa-plus trigAddRow " aria-hidden="true"></span>
+						                  	<span data-id="1" class="fa fa-plus trigAddRow" aria-hidden="true"></span>
 						                    <span data-id="rec_1" class=" delete_row glyphicon glyphicon-remove"></span>
 						                    </div>
 						                </td>
@@ -131,20 +174,21 @@
 						  	<div class="total col-md-12">
 						  		<div class="">
 						  			<p class="totalCol">Net Amount:<span></span></p>
-							  		<p data-value="2.5" class="sgst">SGST:2.5%<span></span></p>
-							  		<p data-value="2.5" class="cgst">CGST:2.5%<span></span></p>
+							  		<p data-value="2.5" class="sgst">SGST 2.5%:<span></span></p>
+							  		<p data-value="2.5" class="cgst">CGST 2.5%:<span></span></p>
 							  		<p class="sumTotal">Total:<span></span><p>
 						  		</div>
 						  	</div>
-						</div>						
+						</div>
 					</div>
 				</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
-						<input type="hidden" data-id="1" id="new_row" class="btn btn-warning">
+						<button type="hidden" data-id="1" id="new_row" class="btn btn-warning">Add</button>
+						<button type="button" id="proceed" class="btn btn-success">Submit</button>
 						<button class="btn btn-info " id="print">Print</button>
 					</div>
 
-				<!-- //Main Container -->							
+				<!-- //Main Container -->
 			</div>
 			 <!--footer section start-->
 				<?php
@@ -157,12 +201,12 @@
 							<?php
 								sideBar();
 							?>
-							  <div class="clearfix"></div>		
+							  <div class="clearfix"></div>
 							</div>
 							<script>
 							var toggle = true;
-										
-							$(".sidebar-icon").click(function() {                
+
+							$(".sidebar-icon").click(function() {
 							  if (toggle)
 							  {
 								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
@@ -175,7 +219,7 @@
 								  $("#menu span").css({"position":"relative"});
 								}, 400);
 							  }
-											
+
 											toggle = !toggle;
 										});
 							</script>

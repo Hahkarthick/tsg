@@ -6,8 +6,8 @@ function updateUserStatus($activate,$status){
 	$valueArray=array(':status'=>$status,':id'=>$activate);
 	$rowsAffected=dbUpdate($sql,$valueArray);
 	return $rowsAffected;
-
 }
+
 function resetForgotPwd($user_email,$pwd){
 	
 	global $psalt;

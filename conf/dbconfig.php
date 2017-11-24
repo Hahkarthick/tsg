@@ -1,19 +1,19 @@
 <?php
- 
+
   class Database {
 
 	  protected static $_instance;
 	  protected $_connection;
-	  protected $_dns = 'mysql:host=98.130.0.89;dbname=pelluci_santhosh';
-	  protected $_username = 'pelluci_calc';
-	  protected $_password = 'Santhosh2017';
+	  protected $_dns = 'mysql:host=localhost;dbname=tsg';
+	  protected $_username = 'root';
+	  protected $_password = '#@#@1995';
 
 	  /**
 	  * Singleton pattern implementation makes "new" unavailable
 	  */
 	  protected function __construct()
 	  {
-		  $this->_connection = 
+		  $this->_connection =
 			  new PDO($this->_dns, $this->_username, $this->_password);
 	  }
 
