@@ -2,19 +2,16 @@
 session_start();
 
 include ('security.php');
-include('bill_cont_datactrl.php');
+
 	# code...
 
 		$total_amt=$_REQUEST['total'];
-		$sgst=$_REQUEST['sgst'];
-		$cgst=$_REQUEST['cgst'];
-		$tds=$_REQUEST['totalCol']*0.02;
-		//echo $tds;
-		if (!empty($total_amt)) {
-		$resultset=addMaster($total_amt,$sgst,$cgst,$tds);
-	}
-		
+		$company_id=$_REQUEST['id'];
+		$statusCode="";
+	if (!empty($visit_date) && !empty($doctor_id) && !empty($patient_id)) {
 
+		$prescription_id=addMaster($total_amt);
+	}
 if ($prescription_id==true) {
 
 
@@ -57,7 +54,7 @@ if ($prescription_id==true) {
 			return false;
 		}
 		else
-		$bResult=addoutflow($particular,$weight,$purity,$netgms,$mcharge,$amount);
+		$bResult=addBill($particular,$weight,$purity,$netgms,$mcharge,$amount);
 
 		if($bResult==false)
 		{

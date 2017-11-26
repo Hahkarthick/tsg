@@ -29,6 +29,16 @@ include ('conf/dbfunctions.php');
 	    	});
 				$('#proceed').on('click',function(){
 						var total=$('.sumTotal span').html();
+<<<<<<< HEAD
+
+						$.ajax({
+						type: "POST",
+						url: "bill_cont.php",
+						data:$('form').serialize()+{
+		        	  'total':total
+							},
+						success: function(results) {
+=======
 						var sgst=$('.sgst span').html();
 						var cgst=$('.cgst span').html();
 						var totalCol=$('.totalCol span').html();
@@ -39,6 +49,7 @@ include ('conf/dbfunctions.php');
 						data:$('form').serialize()+"&total="+total+"&sgst="+sgst+"&cgst="+cgst+"&totalCol="+totalCol,
 						success: function(results) {
 							alert(results);
+>>>>>>> 97792e5c28b93854821855347249423c34f68e9c
 							if (results==1) {
 								$("#result").html("Registered Successfully");
 								$('#result')[0].scrollIntoView(true);
@@ -46,7 +57,11 @@ include ('conf/dbfunctions.php');
 								$('.print').show() && $('#proceed').hide();
 									 print();
 							}else{
+<<<<<<< HEAD
+								$('#error').html("Registration Failed");
+=======
 								$('#error').html(results);
+>>>>>>> 97792e5c28b93854821855347249423c34f68e9c
 								$('#error')[0].scrollIntoView(true);
 								$('#error').addClass("alert alert-danger");
 								}
@@ -81,7 +96,6 @@ include ('conf/dbfunctions.php');
 								}
 						});
 				});
-		 };
     	});
 	</script>
    <div class="page-container">
@@ -175,8 +189,13 @@ include ('conf/dbfunctions.php');
 						  	<div class="total col-md-12">
 						  		<div class="">
 						  			<p class="totalCol">Net Amount:<span></span></p>
+<<<<<<< HEAD
+							  		<p data-value="2.5" class="sgst">SGST:2.5%=<span></span></p>
+							  		<p data-value="2.5" class="cgst">CGST:2.5%=<span></span></p>
+=======
 							  		<p data-value="2.5" class="sgst">SGST 2.5%:<span></span></p>
 							  		<p data-value="2.5" class="cgst">CGST 2.5%:<span></span></p>
+>>>>>>> 97792e5c28b93854821855347249423c34f68e9c
 							  		<p class="sumTotal">Total:<span></span><p>
 						  		</div>
 						  	</div>

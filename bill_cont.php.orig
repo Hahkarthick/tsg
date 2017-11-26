@@ -2,6 +2,19 @@
 session_start();
 
 include ('security.php');
+<<<<<<< HEAD
+
+	# code...
+
+		$visit_date=$_REQUEST['visit_date'];
+		$doctor_id=$_REQUEST['doctor_id'];
+		$patient_id=$_SESSION['userinfo'];
+		$statusCode="";
+	if (!empty($visit_date) && !empty($doctor_id) && !empty($patient_id)) {
+
+		$prescription_id=addMedic1(reverse_date($visit_date),$doctor_id,$patient_id);
+	}
+=======
 include('bill_cont_datactrl.php');
 	# code...
 
@@ -15,6 +28,7 @@ include('bill_cont_datactrl.php');
 	}
 		
 
+>>>>>>> 97792e5c28b93854821855347249423c34f68e9c
 if ($prescription_id==true) {
 
 
@@ -57,7 +71,11 @@ if ($prescription_id==true) {
 			return false;
 		}
 		else
+<<<<<<< HEAD
+		$bResult=addBill($particular,$weight,$purity,$netgms,$mcharge,$amount);
+=======
 		$bResult=addoutflow($particular,$weight,$purity,$netgms,$mcharge,$amount);
+>>>>>>> 97792e5c28b93854821855347249423c34f68e9c
 
 		if($bResult==false)
 		{
@@ -73,9 +91,12 @@ if ($prescription_id==true) {
 		exit;
 	}
 }
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 97792e5c28b93854821855347249423c34f68e9c
 ?>
