@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-include ('security.php');
+
 include('bill_cont_datactrl.php');
 	# code...
-
+	$resultset="";
 		$total_amt=$_REQUEST['total'];
 		$sgst=$_REQUEST['sgst'];
 		$cgst=$_REQUEST['cgst'];
@@ -12,16 +12,25 @@ include('bill_cont_datactrl.php');
 		//echo $tds;
 		if (!empty($total_amt)) {
 		$resultset=addMaster($total_amt,$sgst,$cgst,$tds);
-	}
 		
+		global $bill;
+		$bill=$resultset;
+	}
+		//echo $resultset;
 
-if ($prescription_id==true) {
+//if ($resultset==true) {
+	
 
 
 	$form_inc=$_REQUEST['form_inc'];
-	 // echo "$form_inc";
+
 	for ($i=1; $i <=$form_inc ; $i++) {
-			# code...
+			# code...	
+		if(isset($_REQUEST['sno_1'.$i]))
+		$slno=$_REQUEST['sno_1'.$i];
+		else
+		$slno="";
+			
 		if(isset($_REQUEST['particular_'.$i]))
 		$particular=$_REQUEST['particular_'.$i];
 		else
@@ -57,9 +66,13 @@ if ($prescription_id==true) {
 			return false;
 		}
 		else
-		$bResult=addoutflow($particular,$weight,$purity,$netgms,$mcharge,$amount);
-
-		if($bResult==false)
+		{
+		   // echo $bill;
+		  
+		$bResult=addoutflow($particular,$weight,$purity,$netgms,$bill);
+		$cash=addoutcash($mcharge,$amount,$bill);
+		}
+	if($cash==false)
 		{
 			//echo "failure <br/>";
 			echo false;
@@ -67,15 +80,9 @@ if ($prescription_id==true) {
 		else
 		{
 			echo true;
-
-		}
+		}	
+	}	
 
 		exit;
-	}
-}
-
-
-
-
-
+//}
 ?>

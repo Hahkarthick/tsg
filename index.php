@@ -38,7 +38,6 @@ include ('conf/dbfunctions.php');
 						url: "bill_cont.php",
 						data:$('form').serialize()+"&total="+total+"&sgst="+sgst+"&cgst="+cgst+"&totalCol="+totalCol,
 						success: function(results) {
-							alert(results);
 							if (results==1) {
 								$("#result").html("Registered Successfully");
 								$('#result')[0].scrollIntoView(true);
@@ -164,8 +163,8 @@ include ('conf/dbfunctions.php');
 								<span id="error" class="col-md-12 col-sm-12 col-xs-12"></span>
 						</div>
 						<div class="table table-responsive">
-							<input type="hidden" id="form_inc" value="1" name="form_inc">
 							<form method="POST">
+								<input type="hidden" id="form_inc" value="1" name="form_inc">								
 							  	<table data-id="1" id="usertbl" class="table table-bordered">
 									<thead>
 									  <tr>
