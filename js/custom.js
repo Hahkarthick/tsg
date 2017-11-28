@@ -73,16 +73,10 @@ function removeRec() {
 }
 function calculation(){
   $('.weight ,.purity').on('change', function() {
-    var weight = $(this, '.weight').val();
-    //alert(weight);
-    var purity = $(this, '.purity').val();
-    //alert(purity);
-    //var netgms=$('').val();
-    var result = (weight * purity) / 100;
-
+    var weight = $(this).closest('tr').find('.weight').val();
+    var purity = $(this).closest('tr').find('.purity').val();
+    var result = weight * purity/100;
     $(this).parent().siblings().find('.netGms').val(result);
-
-
   });
   $('.mCharge').on('change', function() {
     var weight = $('.weight').val();

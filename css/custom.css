@@ -8,7 +8,7 @@ address span{
 	float: right;
 }
 .outter-wp{
-	
+
     overflow: scroll;
 
 }
@@ -43,6 +43,9 @@ address span{
 	.action div{
 		width:50px;
 	}
+  .hidden{
+    display: none;
+  }
 @media (min-width: 992px){
 
 	.total div{
@@ -59,7 +62,7 @@ address span{
 		font-size: small;
 	}
 	#printCont{
-		font-size: small;	
+		font-size: small;
 	}
 	#printCont h2,#printCont h3{
 		font-size: x-large;
@@ -72,7 +75,7 @@ address span{
 	}
 	#printCont{
 		font-size: x-small;
-		padding: 5px !important;	
+		padding: 5px !important;
 	}
 	#printCont h2{
 		font-size: x-large;
@@ -92,7 +95,7 @@ address span{
       }
       .col-md-6{
         width: 50% !important;
-        float: left;      
+        float: left;
       }
       .col-md-3{
         width: 25% !important;

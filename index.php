@@ -83,6 +83,26 @@ include ('conf/dbfunctions.php');
 				});
 		 };
     	});
+
+			function triggerPrint(){
+			    $(".print").trigger("click");
+			}
+			function print(){
+			  $('#print').click(function(){
+			      var billno=($(this).data("id"));
+			      $.ajax({
+			      type: "POST",
+			      url: "bill_session.php",
+			      data: 'billno='+billno,
+			      success: function(results) {
+			          window.location.href="bill_print_view.php"
+			      },
+			        error: function(XMLHttpRequest, textStatus, errorThrown) {
+			          $('.result').text(textStatus,errorThrown);
+			        }
+			      });
+			 });
+			}
 	</script>
    <div class="page-container">
    <!--/content-inner-->
@@ -104,7 +124,13 @@ include ('conf/dbfunctions.php');
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4 f_right to">
 						<h2>Smith Issue</h2>
-						<p>No:</p>
+							<?php
+							$sql="SELECT `id` FROM `transaction_master` ORDER BY  `id` DESC LIMIT 1";
+							$value=array();
+							$bill_no=dbSelectRow($sql,$value);
+							$index= ++$bill_no['id']
+							?>
+							<p>Bill No:&nbsp;&nbsp;<label> <?php echo $index ?></label></p>
 						<p>Date:</p>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12 border">
@@ -186,7 +212,7 @@ include ('conf/dbfunctions.php');
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<button type="hidden" data-id="1" id="new_row" class="btn btn-warning">Add</button>
 						<button type="button" id="proceed" class="btn btn-success">Submit</button>
-						<button class="btn btn-info " id="print">Print</button>
+						<button class="btn btn-info print hidden" id="print">Print</button>
 					</div>
 
 				<!-- //Main Container -->
