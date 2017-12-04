@@ -80,8 +80,8 @@ include ('conf/dbfunctions.php');
 								}
 						});
 				});
-		 };
-    	});
+		 });
+
 
 			function triggerPrint(){
 			    $(".print").trigger("click");
@@ -164,7 +164,7 @@ include ('conf/dbfunctions.php');
 						</div>
 						<div class="table table-responsive">
 							<form method="POST">
-								<input type="hidden" id="form_inc" value="1" name="form_inc">								
+								<input type="hidden" id="form_inc" value="1" name="form_inc">
 							  	<table data-id="1" id="usertbl" class="table table-bordered">
 									<thead>
 									  <tr>

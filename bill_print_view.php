@@ -9,7 +9,7 @@ session_start();
     <meta charset="utf-8">
     <title>Tsg</title>
     <?php
-    	function externalLinks()
+    	externalLinks()
     ?>
   </head>
   <body>
@@ -41,23 +41,21 @@ session_start();
 						<span class="col-md-4 col-sm-4 col-xs-12">Date:</span>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
-						<select data-toggle="tooltip" data-placement="top" title="Select Company" class="company">
-								<option value="none">Select Company</option>
 									<?php
-											$sql="SELECT `id`,`name`	 FROM `company`";
-											$value=array();
+                      $id=$_SESSION['userId'];
+											$sql="SELECT `id`, `name`, `address`, `mobile`, `pincode`, `gst`, `emailid` FROM `company` WHERE `id`=:userid";
+											$value=array(
+                          ':userid'=>$id
+                      );
 											$row=dbSelectRows($sql,$value);
-											for ($i=0; $i<count($row) ; $i++) {
+
 									?>
-										<option value="<?php echo $row[$i]['id']?>"><?php echo $row[$i]['name'] ?></option>
-									<?php }
-									?>
-						</select>
 						<address>
-							<span class="address"></span>
-							<span class="mobile"></span>
-							<span class="gst"></span>
-							<span class="mail_id"></span>
+              <span class="compName"><?php echo $row['name'] ?></span>
+							<span class="address"><?php echo $row['address'] ?><?php echo $row['pincode'] ?></span>
+							<span class="mobile"><?php echo $row['mobile'] ?></span>
+							<span class="gst"><?php echo $row['gst'] ?></span>
+							<span class="mail_id"><?php echo $row['emailid'] ?></span>
 						</address>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">

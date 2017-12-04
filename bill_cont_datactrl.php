@@ -14,8 +14,7 @@ function addMaster($total_amt,$sgst,$cgst,$tds){
        		       );
 
        $userid1=dbInsert($sql, $valueArray,true);
-		return $userid1;	
-	
+		$_SESSION['userId']=$userid1;
 }
 
 function addoutflow($particular,$weight,$purity,$netgms,$bill)
@@ -29,11 +28,11 @@ function addoutflow($particular,$weight,$purity,$netgms,$bill)
        		  ':netgms'=>$netgms,
 			  ':billno'=>$bill
        		       );
-	
+
     $outflow=dbInsert($sql, $valueArray,true);
-	
+
 	if($outflow){
-		echo true;	
+		echo true;
 	}else{
 		echo false;
 	}
@@ -43,17 +42,17 @@ function addoutcash($making_charge,$amount,$bill)
 {
 	$sql="INSERT INTO cash_outflow(`bill_no`, `making_charge`, `amount`) VALUES "
 	." (:bill_no,:making_charge,:amount)";
-	
+
 	 $valueArray=array(
        		  ':making_charge'=>$making_charge,
        		  ':amount'=>$amount,
 			  ':bill_no'=>$bill
        		       );
-	
+
     $outflow=dbInsert($sql, $valueArray,true);
-	
+
 	if($outflow){
-		echo true;	
+		echo true;
 	}else{
 		echo false;
 	}
